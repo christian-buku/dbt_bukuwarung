@@ -40,8 +40,8 @@ models:
     # Applies to all files under models/example/
     example:
       +materialized: table
-      +location: asia-southeast1
+      # +location: asia-southeast1
     community_loan:
       +materialized: table
-      +location: asia-southeast1
+      # +location: asia-southeast1
     +location: asia-southeast1
