@@ -1,0 +1,1 @@
+select * from community_loan.comm_loan_submission_approval
