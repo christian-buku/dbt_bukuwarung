@@ -3,13 +3,13 @@
         select 
             struct(
                 {{ date_column }} AS original_date,
-                EXTRACT(YEAR FROM {{date_column}}) AS year,
-                EXTRACT(MONTH FROM {{date_column}}) AS month,
-                EXTRACT(DAY FROM {{date_column}}) AS day,
-                EXTRACT(DAYOFWEEK FROM {{date_column}}) AS day_of_week,
-                EXTRACT(DAYOFYEAR FROM {{date_column}}) AS day_of_year,
-                EXTRACT(WEEK FROM {{date_column}}) AS week,
-                EXTRACT(QUARTER FROM {{date_column}}) AS quarter
+                EXTRACT(YEAR FROM CAST( {{date_column}} AS DATE )) AS year,
+                EXTRACT(MONTH FROM CAST( {{date_column}} AS DATE )) AS month,
+                EXTRACT(DAY FROM CAST( {{date_column}} AS DATE )) AS day,
+                EXTRACT(DAYOFWEEK FROM CAST( {{date_column}} AS DATE )) AS day_of_week,
+                EXTRACT(DAYOFYEAR FROM CAST( {{date_column}} AS DATE )) AS day_of_year,
+                EXTRACT(WEEK FROM CAST( {{date_column}} AS DATE )) AS week,
+                EXTRACT(QUARTER FROM CAST( {{date_column}} AS DATE )) AS quarter
             ) as extract_date
     )
 {% endmacro %}
